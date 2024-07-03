@@ -10,12 +10,4 @@ export class PickupPointsService {
   async findAll(): Promise<PickupPoint[]> {
     return await this.pickupPointsModel.find().exec();
   }
-
-  async findOne(id: string): Promise<PickupPoint> {
-    const result = await this.pickupPointsModel.findById(id).exec();
-    if (!result) {
-      throw Error(`Точка выдачи с id ${id} не найдена`);
-    }
-    return result;
-  }
 }
